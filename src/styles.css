@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    background-color: #02051e;
+    user-select: none;
+}
+.content{
+    display: flex;    
+}
+#sidebar{
+    background-color: #293950;
+    margin-left: 2vw;
+    margin-top: 2vh;
+    width: 5.5vw;
+    height: 96vh;
+    border-radius: 20px;
+}
+
+.menu-option{
+    color: white;
+    font-family: 'Merriweather', serif;
+    background-color: #293950;
+    width: fit-content;
+    margin: auto;
+    justify-items: center;
+    margin-top: 10vh;
+    font-size: 1vw;
+    cursor: pointer;
+}
+
+.menu-icon{
+    fill: white;
+    background-color: #293950;
+    width: 2vw;
+    height: 2vh;
+    margin: auto;
+    margin-bottom: 3vh;
+    justify-content: center;
+    cursor: pointer;
+}
+
+svg{
+    background-color: #293950;
+}
+
+#search{
+    background-color: #293950;
+    margin-left: 5vw;
+    margin-top: 4vh;
+    width: 30vw;
+    height: 5vh;
+    border-radius: 20px;
+    border: none;
+    font-size: 20px;
+    color: white;
+    padding-left: 2%;
+    outline: none;
+}
+
+#search::placeholder{
+    color: rgb(219, 219, 219);
+}
+
+#search:focus::placeholder{
+    visibility: hidden;
+    transition-duration: 0.1s;
+}
+
+#search:focus{
+    outline: none;
+    border: 3px solid white;
+    transition-duration: 0.2s;
+}
+
+#displayPane{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 10vw;
+    margin-top: 10vh;
+}
