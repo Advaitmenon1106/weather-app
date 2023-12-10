@@ -6,7 +6,6 @@ import displayHomeTemperature from './HomeTemperature';
 const home = document.getElementById('home');
 home.addEventListener('click', displayHomeTemperature);
 
-
 const cities = document.getElementById('cities');
 cities.addEventListener('click', displayCities);
 

@@ -8,7 +8,8 @@
     font-family: 'Merriweather', 'Times New Roman', Times, serif;
 }
 .content{
-    display: flex;    
+    display: flex;  
+    position: relative;  
 }
 
 #content-body{
@@ -21,10 +22,12 @@
     width: 5.5vw;
     height: 96vh;
     border-radius: 20px;
+    position: sticky;
+    top: 0;
 }
 
 .menu-option{
-    color: white;
+    color: silver;
     font-family: 'Merriweather', 'Times New Roman', Times, serif;
     background-color: #293950;
     width: fit-content;
@@ -35,8 +38,12 @@
     cursor: pointer;
 }
 
+.menu-option:hover{
+    color: white;
+}
+
 .menu-icon{
-    fill: white;
+    fill: silver;
     background-color: #293950;
     width: 30px;
     height: 30px;
@@ -44,6 +51,10 @@
     margin-bottom: 3vh;
     justify-content: center;
     cursor: pointer;
+}
+
+.menu-icon:hover{
+    fill: white;   
 }
 
 svg{
@@ -85,13 +96,17 @@ svg{
     font-size: 25px;
     font-weight: bold;
     margin-left: 10vw;
-    margin-top: 10vh;
+    margin-top: 7vh;
 }
 
 .cities-grid{
     display: grid;
     grid-template-columns: 400px 400px 400px;
     grid-auto-rows: 400px;
+    margin-top: 5vh;
+    margin-left: 3vw;
+    column-gap: 3vw;
+    row-gap: 5vh;
 }
 
 .add-card{
@@ -125,10 +140,17 @@ svg{
     width: fit-content;
 }
 
+.cities-card{
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
 .fortnight-table{
     color: white;
     font-size: 20px;
-    margin-top: 10vh;
+    margin-top: 7vh;
     margin-left: 5vw;
     width: 70vw;
     height: 70vh;

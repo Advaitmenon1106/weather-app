@@ -21,6 +21,10 @@ module.exports = {
             {
                 test: /\.mp4$/,
                 type: 'asset/resource'
+            },
+            {
+                test: /\.(png|svg|jpg)$/i,
+                type: 'asset/resource',
             }
         ]
     }

@@ -1,4 +1,5 @@
 import displaySearch from "./DisplaySearch";
+import loadFortnightly from "./FortnightlyTable";
 
 export function searchQuery(query){
     const generic_part = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
@@ -25,25 +26,26 @@ function loadSearches(){
 export default function searchFunction(){
 
     loadSearches();
-
     const searchBar = document.getElementById('search');
     
     searchBar.addEventListener('keydown', (event)=>{
-    if (event.key === "Enter"){
-        searchBar.blur();
-        document.body.style.cursor = "progress";
-        let regionQuery = searchBar.value;
-        let dataPromise = searchQuery(regionQuery);
-        dataPromise.then((response)=>{
-            let dataJson = response.json()
-            console.log(dataJson);
-            return dataJson;
-        })
-        .then((response)=>{
-            console.log(response.days);
-            document.body.style.cursor = "default";
-            displaySearch(response.address, response.days[0].temp);
-        })
-    }
+        if (event.key === "Enter"){
+            searchBar.blur();
+            document.body.style.cursor = "progress";
+            let regionQuery = searchBar.value;
+            let dataPromise = searchQuery(regionQuery);
+            dataPromise.then((response)=>{
+                let dataJson = response.json()
+                return dataJson;
+            })
+            .then((response)=>{
+                document.body.style.cursor = "default";
+                displaySearch(response.address, response.days[0].temp);
+                if (document.getElementsByClassName('fortnight-table')[0] !=null){
+                    document.getElementsByClassName('fortnight-table')[0].remove();          
+                }
+                loadFortnightly(response);
+            })
+        }
 })
 }
